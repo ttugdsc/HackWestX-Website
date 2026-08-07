@@ -1,26 +1,177 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* "Beyond the Feed" cyber-scrapbook palette — teal canvas, candy accents */
+  --color-lagoon: #00abaf;
+  --color-lagoon-deep: #007c80;
+  --color-sunshine: #ffd166;
+  --color-blush: #f792ba;
+  --color-coral: #ef5b5b;
+  --color-grape: #6f5aa8;
+  --color-cream: #fff7e8;
+  --color-ink: #0b3a3c;
+  --color-sky: #bfe2ff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-nunito);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-baloo);
+  --font-hand: var(--font-caveat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* Anchored sections land below the fixed nav */
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Flat teal fallback — the painted swirl canvas layers on top of this */
+  background-color: var(--color-lagoon);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Chunky rounded display type with a soft two-layer drop-shadow:
+   a solid offset "sticker" layer plus a wide blurred glow */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  text-shadow:
+    0 5px 0 rgba(11, 58, 60, 0.3),
+    0 14px 30px rgba(11, 58, 60, 0.35);
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-sunshine) 70%, transparent);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-lagoon-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-cream);
+  border-radius: 8px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilities                                                           */
+/* ------------------------------------------------------------------ */
+
+/* Blocky scrapbook card: thick ink border + hard offset shadow that
+   "lifts" toward the cursor on hover. Wax texture tile over any color. */
+@utility sticker-card {
+  border-radius: 1.75rem;
+  border: 4px solid var(--color-ink);
+  box-shadow: 8px 10px 0 rgba(11, 58, 60, 0.35);
+  background-image: url("/crayon-card.png");
+  background-size: 260px;
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &:hover {
+    transform: translate(-3px, -5px);
+    box-shadow: 13px 17px 0 rgba(11, 58, 60, 0.3);
+  }
+}
+
+/* Hand-stamped label chip */
+@utility scrap-chip {
+  border-radius: 999px;
+  border: 3px solid var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  background-image: url("/crayon-card.png");
+  background-size: 220px;
+  box-shadow: 3px 4px 0 rgba(11, 58, 60, 0.3);
+}
+
+/* Taped-down paper note — crayony, translucent, the sky shows through */
+@utility paper-note {
+  border-radius: 4px 22px 8px 26px;
+  border: 3px solid var(--color-ink);
+  background-color: color-mix(in srgb, var(--color-cream) 78%, transparent);
+  background-image: url("/crayon-card.png");
+  background-size: 260px;
+  backdrop-filter: blur(3px);
+  color: var(--color-ink);
+  box-shadow: 6px 8px 0 rgba(11, 58, 60, 0.3);
+}
+
+/* Readable body text over the painted sky: cream ink with the same
+   two-layer shadow the headings wear */
+@utility text-pop {
+  color: var(--color-cream);
+  text-shadow:
+    0 2px 0 rgba(11, 58, 60, 0.55),
+    0 8px 18px rgba(11, 58, 60, 0.4);
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero set dressing                                                   */
+/* ------------------------------------------------------------------ */
+
+@keyframes grid-flow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 48px;
+  }
+}
+
+/* Synthwave floor rushing toward the horizon */
+.grid-floor {
+  background-image:
+    linear-gradient(rgba(255, 247, 232, 0.28) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 247, 232, 0.28) 2px, transparent 2px);
+  background-size: 48px 48px;
+  transform: perspective(520px) rotateX(62deg);
+  transform-origin: bottom;
+  mask-image: linear-gradient(to top, black 30%, transparent);
+  animation: grid-flow 2.4s linear infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: spin-slow 46s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: spin-slow 32s linear infinite reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sticker-card,
+  .sticker-card:hover {
+    transform: none;
+  }
+
+  .grid-floor,
+  .animate-orbit,
+  .animate-orbit-reverse {
+    animation: none;
+  }
 }
