@@ -16,6 +16,8 @@ export const siteConfig = {
     devpost: "https://hackwestx-2026.devpost.com",
     discord: "https://discord.gg/hackwestx",
     email: "mailto:sponsors@hackwestx.dev",
+    codeOfConduct:
+      "https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md",
   },
 } as const;
 
@@ -103,6 +105,11 @@ export const scheduleCopy = {
 export type FaqItem = {
   question: string;
   answer: string;
+  /** Optional trailing link rendered after the answer. */
+  link?: {
+    label: string;
+    href: string;
+  };
 };
 
 export const faqCopy = {
@@ -133,6 +140,15 @@ export const faqCopy = {
       question: "I've never hacked before. Can I come?",
       answer:
         "Then you're exactly who we built this for. Intro workshops all afternoon, mentors roaming all night, zero judgment — everyone's first hackathon is legendary.",
+    },
+    {
+      question: "Are there rules I should know about?",
+      answer:
+        "One big one: be decent to each other. HackWesTX is an MLH Member Event, so every hacker, mentor, judge, and organizer is held to the MLH Code of Conduct for the whole weekend.",
+      link: {
+        label: "Read the MLH Code of Conduct",
+        href: siteConfig.links.codeOfConduct,
+      },
     },
   ] satisfies FaqItem[],
 } as const;

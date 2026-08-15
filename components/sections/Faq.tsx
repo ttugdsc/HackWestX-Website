@@ -56,6 +56,16 @@ export default function Faq() {
                       <p className="text-pop pb-5 pr-10 text-xl font-semibold opacity-90 md:text-2xl">
                         {faq.answer}
                       </p>
+                      {faq.link && (
+                        <a
+                          href={faq.link.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-pop mb-5 inline-block text-lg font-bold underline decoration-dashed underline-offset-4 transition-opacity hover:opacity-70 md:text-xl"
+                        >
+                          {faq.link.label} ↗
+                        </a>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -92,9 +102,22 @@ export default function Faq() {
         </div>
       </Reveal>
 
-      <p className="text-pop mt-24 text-center font-display text-sm font-bold">
-        Made with ♥ by {siteConfig.organizer} · See you beyond the feed ✦
-      </p>
+      {/* footer — MLH requires the Code of Conduct to be linked here */}
+      <footer className="text-pop mt-24 text-center font-display text-sm font-bold">
+        <p>
+          Made with ♥ by {siteConfig.organizer} · See you beyond the feed ✦
+        </p>
+        <p className="mt-2">
+          <a
+            href={siteConfig.links.codeOfConduct}
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-dashed underline-offset-4 transition-opacity hover:opacity-70"
+          >
+            MLH Code of Conduct
+          </a>
+        </p>
+      </footer>
     </section>
   );
 }
