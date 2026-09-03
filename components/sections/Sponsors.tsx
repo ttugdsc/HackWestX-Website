@@ -82,31 +82,6 @@ export default function Sponsors() {
             </motion.div>
           );
         })}
-
-        {/* Placeholder — the list keeps growing */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.4, rotate: 12, y: 60 }}
-          whileInView={{ opacity: 1, scale: 1, rotate: 4, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{
-            type: "spring",
-            stiffness: 120,
-            damping: 11,
-            delay: sponsorsCopy.sponsors.length * 0.15,
-          }}
-          whileHover={{ scale: 1.12, rotate: 0 }}
-        >
-          <motion.div
-            animate={reducedMotion ? undefined : { y: [0, -10, 0], rotate: [3, 5, 3] }}
-            transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut" }}
-            className="sticker-card flex items-center gap-2 border-dashed bg-blush/80 px-6 py-4 text-ink backdrop-blur-sm"
-          >
-            <span className="font-display text-2xl font-extrabold [text-shadow:none] md:text-3xl">
-              (and&nbsp;more)
-            </span>
-            <span aria-hidden="true" className="text-2xl">✦</span>
-          </motion.div>
-        </motion.div>
       </div>
 
       <Reveal delay={0.2}>

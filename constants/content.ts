@@ -185,6 +185,27 @@ export const sponsorsCopy = {
       width: 275,
       height: 128,
     },
+    {
+      id: "ihub",
+      name: "iHub",
+      src: "/sponsor-ihub.png",
+      width: 1475,
+      height: 1475,
+    },
+    {
+      id: "kla",
+      name: "KLA",
+      src: "/sponsor-kla.png",
+      width: 738,
+      height: 165,
+    },
+    {
+      id: "l3harris",
+      name: "L3Harris",
+      src: "/sponsor-l3harris.png",
+      width: 1783,
+      height: 443,
+    },
   ] satisfies Sponsor[],
 } as const;
 
