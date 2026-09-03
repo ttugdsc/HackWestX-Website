@@ -15,6 +15,7 @@ export const siteConfig = {
       "https://gdg.community.dev/events/details/google-gdg-on-campus-texas-tech-university-lubbock-united-states-presents-hackwestx-26-beyond-the-feed-hackathon/",
     devpost: "https://hackwestx-2026.devpost.com",
     discord: "https://discord.gg/hackwestx",
+    instagram: "https://www.instagram.com/gdg_ttu/",
     email: "mailto:sponsors@hackwestx.dev",
     codeOfConduct:
       "https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md",
@@ -96,6 +97,88 @@ export const scheduleCopy = {
       ],
     },
   ] satisfies ScheduleDay[],
+} as const;
+
+/* ------------------------------------------------------------------ */
+/* Layer 3.5 — Tracks & prizes                                         */
+/* ------------------------------------------------------------------ */
+
+export type Track = {
+  id: string;
+  name: string;
+  /** Category line, e.g. "Specialty" or a sponsor credit. */
+  kind: string;
+  /** Who walks away with it. */
+  award: string;
+  icon: string;
+  /** One-liner shown while the card is collapsed. */
+  tagline: string;
+  /** The full brief, revealed when the card is opened. */
+  brief: string;
+  /** Tailwind color classes for the card face. */
+  accent: string;
+};
+
+export const tracksCopy = {
+  eyebrow: "The board",
+  title: "Tracks & prizes.",
+  subtitle:
+    "One grand prize and three specialty tracks — tap a card for the brief. Plus a surprise challenge from Patterson UTI.",
+  tracks: [
+    {
+      id: "first-timer",
+      name: "First Timer",
+      kind: "Specialty",
+      award: "1 winning team",
+      icon: "🌱",
+      tagline: "Your first hackathon, recognized.",
+      brief:
+        "For teams where every member is at their very first hackathon. Ship something that works and tells a story — we judge on learning, effort, and heart, not years of experience. New to all of this? This one has your name on it.",
+      accent: "bg-grape/80 text-cream",
+    },
+    {
+      id: "tcl",
+      name: "TCL Sponsored",
+      kind: "Sponsored by Tactical Computing Labs",
+      award: "1 winning team",
+      icon: "🗄️",
+      tagline: "Keep AI-scale file systems fast, observable, and healthy.",
+      brief:
+        "Tactical Computing Labs wants tooling for the performance and health monitoring of parallel and shared file systems — the storage layer behind large AI clusters. Think live dashboards, metrics pipelines, anomaly detection, or benchmarking harnesses that flag a degrading shared file system before jobs start failing.",
+      accent: "bg-lagoon-deep/80 text-cream",
+    },
+    {
+      id: "ui",
+      name: "UI",
+      kind: "Specialty",
+      award: "1 winning team",
+      icon: "🎨",
+      tagline: "The project that looks and feels the best.",
+      brief:
+        "Layout, motion, polish, accessibility. If your project is a genuine joy to look at and to use — thoughtful details, clean type, no rough edges — this track is yours to take.",
+      accent: "bg-blush/80 text-ink",
+    },
+    {
+      id: "overall",
+      name: "Overall",
+      kind: "Specialty",
+      award: "Top 3 teams",
+      icon: "🏆",
+      tagline: "The headline prize. Every project is in the running.",
+      brief:
+        "Judges walk the whole expo floor and score every project on execution, originality, and how far it pushes past “the feed.” The top three teams take the podium and the grand prizes.",
+      accent: "bg-sunshine/80 text-ink",
+    },
+  ] satisfies Track[],
+  challenge: {
+    label: "Sponsored challenge",
+    name: "Patterson UTI Surprise Challenge",
+    icon: "🎁",
+    tagline: "A fun, sponsored side-quest with its own prize.",
+    brief:
+      "It's not a track — it's a surprise. Patterson UTI is bringing a fun challenge with its own prize, and the brief stays sealed until the opening ceremony. Show up ready for anything.",
+    revealNote: "Revealed at the opening ceremony · Sat, Sep 12",
+  },
 } as const;
 
 /* ------------------------------------------------------------------ */

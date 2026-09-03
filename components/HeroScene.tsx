@@ -107,6 +107,46 @@ export default function HeroScene() {
             Register interest →
           </a>
         </motion.div>
+
+        <motion.nav
+          aria-label="HackWesTX social links"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 80, damping: 14, delay: 1 }}
+          className="mt-8 flex items-center gap-4"
+        >
+          <a
+            href={siteConfig.links.instagram}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="HackWesTX on Instagram"
+            className="scrap-chip flex h-11 w-11 items-center justify-center bg-cream text-ink transition hover:brightness-105"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a
+            href={siteConfig.links.devpost}
+            target="_blank"
+            rel="noreferrer"
+            className="scrap-chip flex h-11 items-center bg-cream px-4 text-sm font-bold text-ink transition hover:brightness-105"
+          >
+            Devpost ↗
+          </a>
+        </motion.nav>
       </motion.div>
 
     </section>
