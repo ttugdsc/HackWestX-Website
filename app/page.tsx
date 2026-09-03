@@ -7,6 +7,7 @@ import ParallaxField from "@/components/ParallaxField";
 import ScrollTravelers from "@/components/ScrollTravelers";
 import About from "@/components/sections/About";
 import Faq from "@/components/sections/Faq";
+import GetInvolved from "@/components/sections/GetInvolved";
 import Sponsors from "@/components/sections/Sponsors";
 import Tracks from "@/components/sections/Tracks";
 
@@ -24,6 +25,7 @@ export default function Home() {
         <About />
         <Tracks />
         <Sponsors />
+        <GetInvolved />
         <Faq />
       </main>
     </ParallaxField>

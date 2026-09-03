@@ -196,8 +196,8 @@ export const sponsorsCopy = {
       id: "kla",
       name: "KLA",
       src: "/sponsor-kla.png",
-      width: 738,
-      height: 165,
+      width: 933,
+      height: 204,
     },
     {
       id: "l3harris",
@@ -207,6 +207,46 @@ export const sponsorsCopy = {
       height: 443,
     },
   ] satisfies Sponsor[],
+} as const;
+
+/* ------------------------------------------------------------------ */
+/* Layer 4.5 — Get involved (mentors & volunteers)                     */
+/* ------------------------------------------------------------------ */
+
+export type ApplyCard = {
+  id: string;
+  icon: string;
+  title: string;
+  blurb: string;
+  cta: string;
+  href: string;
+};
+
+export const getInvolvedCopy = {
+  eyebrow: "Join the crew",
+  title: "Mentor or volunteer.",
+  subtitle:
+    "Not hacking this year? Help run the frontier. Applications are open — pick your role below.",
+  cards: [
+    {
+      id: "mentor",
+      icon: "🧭",
+      title: "Mentors",
+      blurb:
+        "Debug with teams, run a workshop, judge the expo. Any background, any experience level — students and pros both welcome.",
+      cta: "Apply to mentor",
+      href: "https://docs.google.com/forms/d/e/1FAIpQLSc36UW2EFZ7OPGkHHm5MSDwvx_m1lEazrEZ21CPuVQQhUK8lQ/viewform?usp=header",
+    },
+    {
+      id: "volunteer",
+      icon: "🤝",
+      title: "Volunteers",
+      blurb:
+        "Check-in, meals, setup, teardown, and keeping the energy up. Grab a shift and help keep the 24 hours moving.",
+      cta: "Apply to volunteer",
+      href: "https://docs.google.com/forms/d/e/1FAIpQLSe1aC9fztpKkNO7znp1fJSpYua5YjMBZzRKKyqL-AweVbIfIA/viewform?usp=header",
+    },
+  ] satisfies ApplyCard[],
 } as const;
 
 /* ------------------------------------------------------------------ */
