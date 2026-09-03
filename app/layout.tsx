@@ -27,7 +27,7 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hackwestx.dev"),
-  title: "HackWesTX 2026 — Beyond the Feed",
+  title: "HackWesTX 2026",
   description:
     "HackWesTX 2026 is Texas Tech's annual hackathon, hosted by GDG on Campus. 24 hours of building the post-algorithmic web. September 12–13, 2026 · Lubbock, TX.",
   keywords: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "student hackathon",
   ],
   openGraph: {
-    title: "HackWesTX 2026 — Beyond the Feed",
+    title: "HackWesTX 2026",
     description:
       "The feed has ended. What's next? 24 hours of building the post-algorithmic web at Texas Tech University.",
     type: "website",

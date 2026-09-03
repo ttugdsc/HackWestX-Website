@@ -83,12 +83,6 @@ export default function Sponsors() {
           );
         })}
       </div>
-
-      <Reveal delay={0.2}>
-        <p className="text-pop mx-auto mt-12 max-w-xl text-center text-lg font-semibold md:text-xl">
-          More partners joining soon. 🤠
-        </p>
-      </Reveal>
     </section>
   );
 }
