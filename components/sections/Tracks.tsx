@@ -103,7 +103,7 @@ export default function Tracks() {
 
                   <AnimatePresence initial={false}>
                     {isOpen && (
-                      <motion.p
+                      <motion.div
                         initial={{ height: 0, opacity: 0, marginTop: 0 }}
                         animate={{
                           height: "auto",
@@ -116,10 +116,23 @@ export default function Tracks() {
                           stiffness: 200,
                           damping: 26,
                         }}
-                        className="overflow-hidden text-base font-semibold leading-relaxed opacity-90"
+                        className="overflow-hidden"
                       >
-                        {track.brief}
-                      </motion.p>
+                        <p className="text-base font-semibold leading-relaxed opacity-90">
+                          {track.brief}
+                        </p>
+                        {track.link && (
+                          <a
+                            href={track.link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="mt-3 inline-block text-sm font-bold underline decoration-dashed underline-offset-4 transition-opacity hover:opacity-70"
+                          >
+                            {track.link.label} ↗
+                          </a>
+                        )}
+                      </motion.div>
                     )}
                   </AnimatePresence>
 

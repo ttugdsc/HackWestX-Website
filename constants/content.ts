@@ -117,6 +117,11 @@ export type Track = {
   brief: string;
   /** Tailwind color classes for the card face. */
   accent: string;
+  /** Optional link to a fuller brief. */
+  link?: {
+    label: string;
+    href: string;
+  };
 };
 
 export const tracksCopy = {
@@ -142,10 +147,14 @@ export const tracksCopy = {
       kind: "Sponsored by Tactical Computing Labs",
       award: "1 winning team",
       icon: "🗄️",
-      tagline: "Keep AI-scale file systems fast and healthy.",
+      tagline: "Build native macOS tools to monitor file systems for local AI.",
       brief:
-        "Tactical Computing Labs wants tools that monitor the performance and health of parallel and shared file systems, the storage behind large AI clusters. Build dashboards, metrics pipelines, anomaly detection, or benchmarks that catch a failing file system before jobs do.",
+        "Apple Silicon is now a real platform for running AI models locally, but macOS lacks the file-system monitoring tools that Linux and BSD have. Build native macOS utilities that track file-system and block-storage health, I/O performance in GB/s, capacity, and per-user quotas across local APFS and shared NFS/pNFS volumes, with clear dashboards and alerts for admins. Any native language works (Swift, Rust, Go, C/C++, Python). Ship an open-source repo with build steps and a short demo.",
       accent: "bg-lagoon-deep/80 text-cream",
+      link: {
+        label: "Read the full challenge",
+        href: "https://github.com/tactcomplabs/hackwestex27",
+      },
     },
     {
       id: "ui",
