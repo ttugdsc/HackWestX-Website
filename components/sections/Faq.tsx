@@ -79,12 +79,11 @@ export default function Faq() {
         <div className="mx-auto mt-16 flex max-w-3xl items-end justify-center gap-6">
           <div className="max-w-2xl text-center">
             <p className="font-display text-4xl font-extrabold uppercase md:text-5xl">
-              📻 Stay tuned…
+              📻 Stay tuned
             </p>
             <p className="text-pop mt-3 text-xl font-semibold md:text-2xl">
-              The schedule, track reveals, workshops, and a few surprises are
-              still loading. Keep an eye on this page — the cactus knows
-              things it isn&apos;t telling us yet. 🌵
+              The schedule, workshops, and a few surprises are still coming.
+              Check back soon. 🌵
             </p>
           </div>
           {/* the robot sees you off */}

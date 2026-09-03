@@ -50,9 +50,9 @@ export const aboutCopy = {
   titleAccent: "Lubbock, TX.",
   subtitle: "The next frontier of hardware and software.",
   stats: [
-    { value: "24", suffix: "hrs", label: "of glorious chaos" },
+    { value: "24", suffix: "hrs", label: "to build" },
     { value: "200", suffix: "+", label: "hackers" },
-    { value: "🏆", label: "exciting prizes" },
+    { value: "$5,000", suffix: "+", label: "in prizes" },
   ] satisfies Stat[],
 } as const;
 
@@ -123,7 +123,7 @@ export const tracksCopy = {
   eyebrow: "The board",
   title: "Tracks & prizes.",
   subtitle:
-    "One grand prize and three specialty tracks — tap a card for the brief. Plus a surprise challenge from Patterson UTI.",
+    "One grand prize and three specialty tracks, with $5,000+ in prizes across them. Tap a card for the brief.",
   tracks: [
     {
       id: "first-timer",
@@ -131,9 +131,9 @@ export const tracksCopy = {
       kind: "Specialty",
       award: "1 winning team",
       icon: "🌱",
-      tagline: "Your first hackathon, recognized.",
+      tagline: "Your first hackathon? This track is for you.",
       brief:
-        "For teams where every member is at their very first hackathon. Ship something that works and tells a story — we judge on learning, effort, and heart, not years of experience. New to all of this? This one has your name on it.",
+        "For teams where everyone is at their first hackathon. Ship something that works and tells a story. We judge on learning and effort, not experience.",
       accent: "bg-grape/80 text-cream",
     },
     {
@@ -142,9 +142,9 @@ export const tracksCopy = {
       kind: "Sponsored by Tactical Computing Labs",
       award: "1 winning team",
       icon: "🗄️",
-      tagline: "Keep AI-scale file systems fast, observable, and healthy.",
+      tagline: "Keep AI-scale file systems fast and healthy.",
       brief:
-        "Tactical Computing Labs wants tooling for the performance and health monitoring of parallel and shared file systems — the storage layer behind large AI clusters. Think live dashboards, metrics pipelines, anomaly detection, or benchmarking harnesses that flag a degrading shared file system before jobs start failing.",
+        "Tactical Computing Labs wants tools that monitor the performance and health of parallel and shared file systems, the storage behind large AI clusters. Build dashboards, metrics pipelines, anomaly detection, or benchmarks that catch a failing file system before jobs do.",
       accent: "bg-lagoon-deep/80 text-cream",
     },
     {
@@ -153,9 +153,9 @@ export const tracksCopy = {
       kind: "Specialty",
       award: "1 winning team",
       icon: "🎨",
-      tagline: "The project that looks and feels the best.",
+      tagline: "The best-looking, best-feeling project wins.",
       brief:
-        "Layout, motion, polish, accessibility. If your project is a genuine joy to look at and to use — thoughtful details, clean type, no rough edges — this track is yours to take.",
+        "Layout, motion, polish, accessibility. If your project is a genuine joy to use, this track is yours.",
       accent: "bg-blush/80 text-ink",
     },
     {
@@ -164,9 +164,9 @@ export const tracksCopy = {
       kind: "Specialty",
       award: "Top 3 teams",
       icon: "🏆",
-      tagline: "The headline prize. Every project is in the running.",
+      tagline: "The big one. Every project is in the running.",
       brief:
-        "Judges walk the whole expo floor and score every project on execution, originality, and how far it pushes past “the feed.” The top three teams take the podium and the grand prizes.",
+        "Judges score every project at the expo on execution, originality, and how far it pushes past the feed. The top three teams take home the grand prizes.",
       accent: "bg-sunshine/80 text-ink",
     },
   ] satisfies Track[],
@@ -174,9 +174,9 @@ export const tracksCopy = {
     label: "Sponsored challenge",
     name: "Patterson UTI Surprise Challenge",
     icon: "🎁",
-    tagline: "A fun, sponsored side-quest with its own prize.",
+    tagline: "A fun challenge from Patterson UTI, with its own prize.",
     brief:
-      "It's not a track — it's a surprise. Patterson UTI is bringing a fun challenge with its own prize, and the brief stays sealed until the opening ceremony. Show up ready for anything.",
+      "Not a track, a surprise. Patterson UTI is running a fun challenge with its own prize. The brief stays sealed until the opening ceremony, so show up ready for anything.",
     revealNote: "Revealed at the opening ceremony · Sat, Sep 12",
   },
 } as const;
@@ -202,32 +202,32 @@ export const faqCopy = {
     {
       question: "Who can participate?",
       answer:
-        "Any currently enrolled college student — any school, any major. Coders, designers, spreadsheet wizards, first-timers: if you can dream it, you're in.",
+        "Any enrolled college student, any school, any major. Coders, designers, and total beginners all belong here.",
     },
     {
       question: "How big can teams be?",
       answer:
-        "One to four hackers. Bring your crew, or show up solo and adopt one at check-in — friendship speedrun included.",
+        "One to four people. Bring a team, or show up solo and find one at check-in.",
     },
     {
       question: "What should I bring?",
       answer:
-        "A laptop, a charger, and the audacity to build something weird. We'll handle the food, the caffeine, and the swag.",
+        "A laptop, a charger, and your student ID. We handle the food, drinks, and swag.",
     },
     {
       question: "What does it cost?",
       answer:
-        "Zero dollars. Free food, free swag, free memories. The only currency you'll spend here is sleep.",
+        "Nothing. Food, swag, and prizes are all free.",
     },
     {
       question: "I've never hacked before. Can I come?",
       answer:
-        "Then you're exactly who we built this for. Intro workshops all afternoon, mentors roaming all night, zero judgment — everyone's first hackathon is legendary.",
+        "Yes, that's who this is for. Beginner workshops run all afternoon and mentors are around all night.",
     },
     {
       question: "Are there rules I should know about?",
       answer:
-        "One big one: be decent to each other. HackWesTX is an MLH Member Event, so every hacker, mentor, judge, and organizer is held to the MLH Code of Conduct for the whole weekend.",
+        "Be decent to each other. HackWesTX is an MLH Member Event, so everyone follows the MLH Code of Conduct all weekend.",
       link: {
         label: "Read the MLH Code of Conduct",
         href: siteConfig.links.codeOfConduct,
@@ -309,14 +309,14 @@ export const getInvolvedCopy = {
   eyebrow: "Join the crew",
   title: "Mentor or volunteer.",
   subtitle:
-    "Not hacking this year? Help run the frontier. Applications are open — pick your role below.",
+    "Not hacking this year? Help us run it. Applications are open, pick your role below.",
   cards: [
     {
       id: "mentor",
       icon: "🧭",
       title: "Mentors",
       blurb:
-        "Debug with teams, run a workshop, judge the expo. Any background, any experience level — students and pros both welcome.",
+        "Debug with teams, run a workshop, or judge the expo. Students and pros both welcome.",
       cta: "Apply to mentor",
       href: "https://docs.google.com/forms/d/e/1FAIpQLSc36UW2EFZ7OPGkHHm5MSDwvx_m1lEazrEZ21CPuVQQhUK8lQ/viewform?usp=header",
     },
@@ -325,7 +325,7 @@ export const getInvolvedCopy = {
       icon: "🤝",
       title: "Volunteers",
       blurb:
-        "Check-in, meals, setup, teardown, and keeping the energy up. Grab a shift and help keep the 24 hours moving.",
+        "Check-in, meals, setup, teardown, and keeping the energy up. Grab a shift and keep the weekend running.",
       cta: "Apply to volunteer",
       href: "https://docs.google.com/forms/d/e/1FAIpQLSe1aC9fztpKkNO7znp1fJSpYua5YjMBZzRKKyqL-AweVbIfIA/viewform?usp=header",
     },

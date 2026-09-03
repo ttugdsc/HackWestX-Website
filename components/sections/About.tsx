@@ -13,9 +13,9 @@ const statStyles = [
 ] as const;
 
 const paragraphs = [
-  "Welcome to HackWesTX, the largest student-run hackathon in West Texas. Join hundreds of passionate builders, designers, and innovators for 24 hours of creativity, collaboration, and innovation. Whether you're a first-time hacker or an experienced developer, HackWesTX is where bold ideas become real projects.",
-  "This year's theme, Beyond the Feed, challenges you to look beyond endless scrolling and imagine technology that shapes the future. Build alongside talented students, connect with industry mentors and recruiters, attend workshops, and create something that makes an impact.",
-  "We provide meals, swag, mentorship, prizes, and a weekend packed with unforgettable experiences—so you can focus on building what's next. Come beyond the feed and help create the future at HackWesTX 2026.",
+  "HackWesTX is the largest student-run hackathon in West Texas. For 24 hours, a few hundred students build and ship real projects together. First hackathon or fiftieth, you belong here.",
+  "This year's theme is Beyond the Feed. Stop scrolling and start building the tech that comes next. Work with industry mentors, hit the workshops, and make something that matters.",
+  "Food, swag, mentors, and over $5,000 in prizes are on us. You bring the ideas.",
 ] as const;
 
 export default function About() {

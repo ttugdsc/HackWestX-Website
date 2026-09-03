@@ -36,7 +36,7 @@ export default function Sponsors() {
       <Reveal>
         <h2 className="text-center text-5xl font-extrabold uppercase md:text-7xl">Sponsors</h2>
         <p className="text-pop mx-auto mt-4 max-w-xl text-center text-xl font-semibold md:text-2xl">
-          {sponsorsCopy.label} the generous folks fueling the frontier ↓
+          {sponsorsCopy.label} the companies making HackWesTX happen.
         </p>
       </Reveal>
 
@@ -86,7 +86,7 @@ export default function Sponsors() {
 
       <Reveal delay={0.2}>
         <p className="text-pop mx-auto mt-12 max-w-xl text-center text-lg font-semibold md:text-xl">
-          More partners joining the frontier soon — watch this space. 🤠
+          More partners joining soon. 🤠
         </p>
       </Reveal>
     </section>

@@ -91,7 +91,7 @@ export default function HeroScene() {
           transition={{ type: "spring", stiffness: 100, damping: 14, delay: 0.5 }}
           className="text-pop mt-8 text-xl font-bold md:text-2xl"
         >
-          Sept 12–13 · Texas Tech University · Lubbock, TX
+          Sept 12-13 · Texas Tech University · Lubbock, TX
         </motion.p>
 
         <motion.div
@@ -104,7 +104,7 @@ export default function HeroScene() {
             href={siteConfig.links.register}
             className="sticker-card inline-block bg-blush px-9 py-4 font-display text-xl font-bold text-ink"
           >
-            Register interest →
+            Register now →
           </a>
         </motion.div>
 
