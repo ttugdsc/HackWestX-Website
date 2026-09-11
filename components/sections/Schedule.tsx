@@ -72,37 +72,54 @@ export default function Schedule() {
         </div>
       </Reveal>
 
-      {/* Timeline */}
-      <div className="relative mt-8 overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={day.id}
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -24 }}
-            transition={{ type: "spring", stiffness: 200, damping: 26 }}
-            className="flex flex-col gap-3"
+      {/* Timeline — a ticket-stub note, same paper the rest of the page is scrapbooked from */}
+      <Reveal delay={0.15} rotate={1}>
+        <div className="paper-note relative mx-auto mt-8 max-w-2xl overflow-hidden p-6 md:p-8">
+          {/* tape tabs on the top edge */}
+          <div
+            aria-hidden="true"
+            className="absolute -top-[13px] left-8 flex gap-3"
           >
-            {day.items.map((item) => (
-              <div
-                key={item.time + item.label}
-                className="flex flex-wrap items-center gap-3 rounded-2xl border-[3px] border-cream/80 bg-lagoon-deep/30 px-5 py-3 backdrop-blur-sm sm:flex-nowrap sm:gap-4"
-              >
-                <span className="w-24 shrink-0 font-display text-base font-extrabold text-cream sm:w-28 sm:text-lg">
-                  {item.time}
-                </span>
-                <span
-                  aria-hidden="true"
-                  className="shrink-0 font-display text-xl font-bold text-blush"
+            <span className="h-4 w-7 rounded-t-md border-4 border-b-0 border-ink bg-cream" />
+            <span className="h-4 w-7 rounded-t-md border-4 border-b-0 border-ink bg-cream" />
+          </div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={day.id}
+              initial={{ opacity: 0, x: 24 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -24 }}
+              transition={{ type: "spring", stiffness: 200, damping: 26 }}
+              className="flex flex-col"
+            >
+              {day.items.map((item, i) => (
+                <div
+                  key={item.time + item.label}
+                  className={`flex flex-wrap items-center gap-3 py-4 sm:flex-nowrap sm:gap-4 ${
+                    i !== day.items.length - 1
+                      ? "border-b-[3px] border-dashed border-ink/15"
+                      : ""
+                  }`}
                 >
-                  →
-                </span>
-                <span className="text-pop font-semibold">{item.label}</span>
-              </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+                  <span className="scrap-chip shrink-0 bg-sunshine px-3 py-1 text-xs font-bold text-ink sm:text-sm">
+                    {item.time}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="shrink-0 text-xl font-bold text-coral"
+                  >
+                    →
+                  </span>
+                  <span className="font-display text-base font-semibold leading-snug text-ink sm:text-lg">
+                    {item.label}
+                  </span>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </Reveal>
     </section>
   );
 }
