@@ -296,6 +296,13 @@ export const sponsorsCopy = {
       width: 1783,
       height: 443,
     },
+    {
+      id: "ttu-cs",
+      name: "Texas Tech Department of Computer Science",
+      src: "/sponsor-ttu-cs.png",
+      width: 989,
+      height: 327,
+    },
   ] satisfies Sponsor[],
 } as const;
 
