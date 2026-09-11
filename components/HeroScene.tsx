@@ -139,12 +139,12 @@ export default function HeroScene() {
             </svg>
           </a>
           <a
-            href={siteConfig.links.devpost}
+            href={siteConfig.links.discord}
             target="_blank"
             rel="noreferrer"
             className="scrap-chip flex h-11 items-center bg-cream px-4 text-sm font-bold text-ink transition hover:brightness-105"
           >
-            Devpost ↗
+            Join our Discord ↗
           </a>
         </motion.nav>
       </motion.div>

@@ -13,8 +13,7 @@ export const siteConfig = {
   links: {
     register:
       "https://gdg.community.dev/events/details/google-gdg-on-campus-texas-tech-university-lubbock-united-states-presents-hackwestx-26-beyond-the-feed-hackathon/",
-    devpost: "https://hackwestx-2026.devpost.com",
-    discord: "https://discord.gg/hackwestx",
+    discord: "https://discord.com/invite/yQwV4w6x7S",
     instagram: "https://www.instagram.com/gdg_ttu/",
     email: "mailto:sponsors@hackwestx.dev",
     codeOfConduct:
