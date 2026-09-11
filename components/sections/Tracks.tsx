@@ -12,7 +12,7 @@ const cardTilt = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2"] as const;
 
 export default function Tracks() {
   const reducedMotion = useReducedMotion();
-  const [open, setOpen] = useState<string | null>("tcl");
+  const [open, setOpen] = useState<string | null>(null);
 
   return (
     <section id="tracks" className="relative mx-auto max-w-5xl px-6 py-28">
