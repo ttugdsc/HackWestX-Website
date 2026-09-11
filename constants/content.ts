@@ -60,40 +60,55 @@ export const aboutCopy = {
 /* Layer 3 — Schedule                                                  */
 /* ------------------------------------------------------------------ */
 
-export type ScheduleEvent = {
+export type ScheduleItem = {
   time: string;
-  title: string;
+  label: string;
 };
 
 export type ScheduleDay = {
   id: string;
-  day: string;
-  events: ScheduleEvent[];
+  date: string;
+  dayLabel: string;
+  items: ScheduleItem[];
 };
 
 export const scheduleCopy = {
-  eyebrow: "Flight plan",
-  title: "The 24-hour run.",
+  eyebrow: "Two days, one hub",
+  title: "Schedule.",
+  subtitle:
+    "Every workshop, meal, and surprise, mapped minute by minute. Screenshot this.",
+  location: "Innovation Hub",
   days: [
     {
-      id: "saturday",
-      day: "SAT · SEP 12",
-      events: [
-        { time: "10:00", title: "Check-in" },
-        { time: "11:30", title: "Opening ceremony" },
-        { time: "12:00", title: "Hacking begins" },
-        { time: "15:00", title: "Workshops" },
-        { time: "20:00", title: "Game night" },
+      id: "day1",
+      date: "Sept 12",
+      dayLabel: "Day One",
+      items: [
+        { time: "8:00 AM", label: "Check-in opens 🎉" },
+        { time: "9:00 AM", label: "New here? Find a team" },
+        { time: "9:50 AM", label: "Opening ceremony" },
+        { time: "10:30 AM", label: "Hacking begins + Workshop: KLA" },
+        { time: "11:20 AM", label: "Workshop: CoNetrix" },
+        { time: "12:00 PM", label: "Workshop: L3Harris" },
+        { time: "1:30 PM", label: "Lunch 🌮" },
+        { time: "2:00 PM", label: "Workshop: MLH" },
+        { time: "3:00 PM", label: "Workshop: MLH" },
+        { time: "4:00 PM", label: "Hacking break: Patterson surprise challenge 🎁" },
+        { time: "5:30 PM", label: "Dinner 🍕" },
+        { time: "9:00 PM", label: "Karaoke night 🎤" },
       ],
     },
     {
-      id: "sunday",
-      day: "SUN · SEP 13",
-      events: [
-        { time: "00:00", title: "Midnight fuel drop" },
-        { time: "12:00", title: "Hacking ends" },
-        { time: "13:00", title: "Judging expo" },
-        { time: "15:00", title: "Awards & closing" },
+      id: "day2",
+      date: "Sept 13",
+      dayLabel: "Day Two",
+      items: [
+        { time: "8:30 AM", label: "Breakfast 🍩" },
+        { time: "11:30 AM", label: "Lunch 🌯" },
+        { time: "11:30 AM", label: "Hacking ends!" },
+        { time: "12:00 PM", label: "Expo setup" },
+        { time: "12:45 PM", label: "Expo" },
+        { time: "2:30 PM", label: "Closing ceremony + prizes 🏆" },
       ],
     },
   ] satisfies ScheduleDay[],

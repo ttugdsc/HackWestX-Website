@@ -8,6 +8,7 @@ import ScrollTravelers from "@/components/ScrollTravelers";
 import About from "@/components/sections/About";
 import Faq from "@/components/sections/Faq";
 import GetInvolved from "@/components/sections/GetInvolved";
+import Schedule from "@/components/sections/Schedule";
 import Sponsors from "@/components/sections/Sponsors";
 import Tracks from "@/components/sections/Tracks";
 
@@ -24,6 +25,7 @@ export default function Home() {
         <HeroScene />
         <About />
         <Tracks />
+        <Schedule />
         <Sponsors />
         <GetInvolved />
         <Faq />

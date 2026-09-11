@@ -6,6 +6,7 @@ import { siteConfig } from "@/constants/content";
 const links = [
   { href: "#about", label: "about" },
   { href: "#tracks", label: "tracks" },
+  { href: "#schedule", label: "schedule" },
   { href: "#sponsors", label: "sponsors" },
   { href: "#get-involved", label: "get involved" },
   { href: "#faq", label: "faq" },
