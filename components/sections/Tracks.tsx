@@ -15,6 +15,7 @@ export default function Tracks() {
   const [open, setOpen] = useState<string | null>(null);
 
   return (
+    <>
     <section id="tracks" className="relative mx-auto max-w-5xl px-6 py-28">
       <Sparkle className="absolute right-[8%] top-[10%]" size={22} delay={1} />
       <Sparkle
@@ -162,15 +163,26 @@ export default function Tracks() {
           );
         })}
       </div>
+    </section>
 
-      {/* Patterson UTI — sponsored surprise challenge, not a track */}
+    {/* Patterson UTI — a mid-hack break, not a track */}
+    <section id="mid-hack-break" className="relative mx-auto max-w-5xl px-6 pb-28">
+      <Reveal>
+        <p className="text-pop text-center font-mono text-sm font-bold uppercase tracking-[0.2em]">
+          {tracksCopy.challenge.sectionEyebrow}
+        </p>
+        <h3 className="mt-1 text-center font-display text-3xl font-extrabold uppercase md:text-4xl">
+          {tracksCopy.challenge.sectionTitle}
+        </h3>
+      </Reveal>
+
       <Reveal delay={0.15} rotate={1.5}>
         <motion.div
           animate={
             reducedMotion ? undefined : { rotate: [-0.8, 0.8, -0.8] }
           }
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          className="paper-note mx-auto mt-12 flex max-w-3xl flex-col items-center gap-4 border-dashed p-8 text-center md:flex-row md:items-center md:gap-8 md:text-left"
+          className="paper-note mx-auto mt-8 flex max-w-3xl flex-col items-center gap-4 border-dashed p-8 text-center md:flex-row md:items-center md:gap-8 md:text-left"
         >
           <span
             aria-hidden="true"
@@ -182,9 +194,9 @@ export default function Tracks() {
             <p className="scrap-chip inline-block bg-sunshine px-3 py-0.5 text-xs text-ink">
               {tracksCopy.challenge.label}
             </p>
-            <h3 className="mt-2 font-display text-2xl font-extrabold text-ink md:text-3xl">
+            <h4 className="mt-2 font-display text-2xl font-extrabold text-ink md:text-3xl">
               {tracksCopy.challenge.name}
-            </h3>
+            </h4>
             <p className="mt-2 text-base font-semibold text-ink/80">
               {tracksCopy.challenge.brief}
             </p>
@@ -195,5 +207,6 @@ export default function Tracks() {
         </motion.div>
       </Reveal>
     </section>
+    </>
   );
 }

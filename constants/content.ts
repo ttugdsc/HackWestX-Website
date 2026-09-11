@@ -142,6 +142,17 @@ export const tracksCopy = {
       accent: "bg-grape/80 text-cream",
     },
     {
+      id: "tcl",
+      name: "TCL Sponsored",
+      kind: "Sponsored by Tactical Computing Labs",
+      award: "1 winning team",
+      icon: "🗄️",
+      tagline: "A real technical challenge from TCL, with its own prize.",
+      brief:
+        "Tactical Computing Labs is bringing a challenge built around real-world tech: think AI, macOS, and hard technical problems. Full details drop at kickoff, so come ready to build.",
+      accent: "bg-lagoon-deep/80 text-cream",
+    },
+    {
       id: "ui",
       name: "UI",
       kind: "Specialty",
@@ -165,6 +176,8 @@ export const tracksCopy = {
     },
   ] as Track[],
   challenge: {
+    sectionEyebrow: "Halfway through",
+    sectionTitle: "Mid-Hack Break.",
     label: "Sponsored challenge",
     name: "Patterson UTI Surprise Challenge",
     icon: "🎁",
