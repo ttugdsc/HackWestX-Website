@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import FloatingElement from "@/components/FloatingElement";
 import Reveal from "@/components/Reveal";
-import Sparkle from "@/components/Sparkle";
 import { scheduleCopy } from "@/constants/content";
 
 export default function Schedule() {
@@ -13,26 +11,7 @@ export default function Schedule() {
     scheduleCopy.days.find((d) => d.id === activeDay) ?? scheduleCopy.days[0];
 
   return (
-    <section id="schedule" className="relative mx-auto max-w-3xl px-6 py-28">
-      <Sparkle className="absolute left-[6%] top-[8%]" size={18} delay={0.6} />
-      <Sparkle
-        className="absolute right-[10%] bottom-[6%]"
-        size={22}
-        delay={1.8}
-        color="rgba(247,146,186,0.9)"
-      />
-      <FloatingElement
-        src="/cactus-hero.png"
-        alt=""
-        width={964}
-        height={932}
-        className="absolute -right-8 -top-16 w-20 rotate-6 md:-right-14 md:-top-20 md:w-28"
-        duration={8}
-        sway={5}
-        bob={10}
-        depth={8}
-      />
-
+    <section id="schedule" className="relative mx-auto max-w-2xl px-6 py-28">
       <Reveal>
         <p className="text-pop text-center font-mono text-sm font-bold uppercase tracking-[0.2em]">
           {scheduleCopy.eyebrow}
@@ -43,14 +22,14 @@ export default function Schedule() {
         <p className="text-pop mx-auto mt-4 max-w-xl text-center text-xl font-semibold md:text-2xl">
           {scheduleCopy.subtitle}
         </p>
-        <p className="scrap-chip mx-auto mt-5 flex w-fit items-center gap-1.5 bg-cream px-4 py-1 text-sm text-ink">
+        <span className="mx-auto mt-5 flex w-fit items-center gap-1.5 rounded-full border border-cream/25 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-cream/80 backdrop-blur-sm">
           📍 {scheduleCopy.location}
-        </p>
+        </span>
       </Reveal>
 
-      {/* Day tabs */}
+      {/* Day switcher — segmented control with a sliding active pill */}
       <Reveal delay={0.1}>
-        <div className="mt-10 flex justify-center gap-3">
+        <div className="relative mx-auto mt-10 flex w-fit gap-1 rounded-full border border-cream/15 bg-white/5 p-1 backdrop-blur-sm">
           {scheduleCopy.days.map((d) => {
             const isActive = d.id === activeDay;
             return (
@@ -59,59 +38,53 @@ export default function Schedule() {
                 type="button"
                 onClick={() => setActiveDay(d.id)}
                 aria-pressed={isActive}
-                className={`scrap-chip px-5 py-2 text-sm font-bold transition md:text-base ${
-                  isActive
-                    ? "bg-blush text-ink"
-                    : "bg-lagoon-deep/50 text-cream hover:bg-lagoon-deep/70"
-                }`}
+                className="relative rounded-full px-5 py-2 text-sm font-bold transition-colors md:text-base"
               >
-                {d.dayLabel} · {d.date}
+                {isActive && (
+                  <motion.span
+                    layoutId="schedule-active-day"
+                    className="absolute inset-0 rounded-full bg-cream shadow-[0_2px_10px_rgba(11,58,60,0.35)]"
+                    transition={{ type: "spring", stiffness: 340, damping: 30 }}
+                  />
+                )}
+                <span
+                  className={`relative z-10 ${isActive ? "text-ink" : "text-cream/65 hover:text-cream"}`}
+                >
+                  {d.dayLabel} · {d.date}
+                </span>
               </button>
             );
           })}
         </div>
       </Reveal>
 
-      {/* Timeline — a ticket-stub note, same paper the rest of the page is scrapbooked from */}
-      <Reveal delay={0.15} rotate={1}>
-        <div className="paper-note relative mx-auto mt-8 max-w-2xl overflow-hidden p-6 md:p-8">
-          {/* tape tabs on the top edge */}
-          <div
-            aria-hidden="true"
-            className="absolute -top-[13px] left-8 flex gap-3"
-          >
-            <span className="h-4 w-7 rounded-t-md border-4 border-b-0 border-ink bg-cream" />
-            <span className="h-4 w-7 rounded-t-md border-4 border-b-0 border-ink bg-cream" />
-          </div>
-
+      {/* Timeline — a clean frosted panel, one accent color, nothing extra */}
+      <Reveal delay={0.18}>
+        <div className="relative mx-auto mt-8 overflow-hidden rounded-[28px] border border-cream/15 bg-ink/30 shadow-[0_24px_60px_rgba(0,0,0,0.3)] backdrop-blur-xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={day.id}
-              initial={{ opacity: 0, x: 24 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -24 }}
-              transition={{ type: "spring", stiffness: 200, damping: 26 }}
-              className="flex flex-col"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
             >
               {day.items.map((item, i) => (
                 <div
                   key={item.time + item.label}
-                  className={`flex flex-wrap items-center gap-3 py-4 sm:flex-nowrap sm:gap-4 ${
+                  className={`grid grid-cols-[4.5rem_1.25rem_1fr] items-center gap-x-3 px-5 py-4 sm:grid-cols-[5.5rem_1.5rem_1fr] sm:gap-x-4 sm:px-7 ${
                     i !== day.items.length - 1
-                      ? "border-b-[3px] border-dashed border-ink/15"
+                      ? "border-b border-cream/10"
                       : ""
                   }`}
                 >
-                  <span className="scrap-chip shrink-0 bg-sunshine px-3 py-1 text-xs font-bold text-ink sm:text-sm">
+                  <span className="font-mono text-xs font-semibold tracking-tight text-cream/55 sm:text-sm">
                     {item.time}
                   </span>
-                  <span
-                    aria-hidden="true"
-                    className="shrink-0 text-xl font-bold text-coral"
-                  >
+                  <span aria-hidden="true" className="text-blush">
                     →
                   </span>
-                  <span className="font-display text-base font-semibold leading-snug text-ink sm:text-lg">
+                  <span className="text-sm font-semibold text-cream sm:text-base">
                     {item.label}
                   </span>
                 </div>
