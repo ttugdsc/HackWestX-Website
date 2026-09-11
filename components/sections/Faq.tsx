@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import FloatingElement from "@/components/FloatingElement";
 import Reveal from "@/components/Reveal";
 import Sparkle from "@/components/Sparkle";
 import { faqCopy, siteConfig } from "@/constants/content";
@@ -74,32 +73,6 @@ export default function Faq() {
           );
         })}
       </div>
-
-      <Reveal delay={0.2} rotate={1}>
-        <div className="mx-auto mt-16 flex max-w-3xl items-end justify-center gap-6">
-          <div className="max-w-2xl text-center">
-            <p className="font-display text-4xl font-extrabold uppercase md:text-5xl">
-              📻 Stay tuned
-            </p>
-            <p className="text-pop mt-3 text-xl font-semibold md:text-2xl">
-              The schedule, workshops, and a few surprises are still coming.
-              Check back soon. 🌵
-            </p>
-          </div>
-          {/* the robot sees you off */}
-          <FloatingElement
-            src="/robot-hero.png"
-            alt=""
-            width={613}
-            height={872}
-            className="hidden w-24 shrink-0 md:block"
-            duration={6}
-            sway={7}
-            bob={12}
-            depth={20}
-          />
-        </div>
-      </Reveal>
 
       {/* footer — MLH requires the Code of Conduct to be linked here */}
       <footer className="text-pop mt-24 text-center font-display text-sm font-bold">
